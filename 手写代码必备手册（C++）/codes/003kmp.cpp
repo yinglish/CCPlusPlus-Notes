@@ -14,7 +14,7 @@ void compute_prefix(const char *pattern, int next[])
     next[0] = j;
     for (i = 1; i < m; i++)
     {
-        while (j > -1 && pattern[j + 1] != pattern[i]) j = next[j];
+        if (j > -1 && pattern[j + 1] != pattern[i]) j = -1;
 
         if (pattern[i] == pattern[j + 1]) j++;
         next[i] = j;
