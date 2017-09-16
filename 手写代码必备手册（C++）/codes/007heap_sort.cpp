@@ -27,6 +27,7 @@ void heapify(elem_t a[], int i, int n)
             tmp_swap = a[i];
             a[i] = a[right];
             a[right] = tmp_swap;
+            heapify(a, left, n);
         }
     }
 
@@ -37,6 +38,7 @@ void heapify(elem_t a[], int i, int n)
             tmp_swap = a[i];
             a[i] = a[left];
             a[left] = tmp_swap;
+            heapify(a, right, n);
         }
     }
 }
@@ -46,6 +48,23 @@ void built_heap(elem_t a[], int n)
     for (int i = n / 2; i > 0; i--)
     {
         heapify(a, i, n);
+    }
+}
+
+elem_t heap_max(elem_t a[])
+{
+    return a[1];
+}
+
+void heap_sort(elem_t a[], int n)
+{
+    build_heap(a, n);
+    for (int i = n - 1; i > 1; ++i)
+    {
+        int tmp = a[i];
+        a[i] = a[1];
+        a[1] = tmp;
+        heapify(a, 1, i);
     }
 }
 
