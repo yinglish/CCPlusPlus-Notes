@@ -138,6 +138,23 @@ const iterator, const_iterator, const const_iterator.
 
 ## 4 设计与声明
 
+**item 18: Make interfaces easy to use correctly and hard to use incorrecty**
+
+**item 19: Treat class design as type design**
+
+* class的设计就是type的设计。在定义一个新type之前，请确定你已经考虑过本条款覆盖的所有讨论的主题
+
+**item 20: Prefer pass-by-reference-to-const to pass-by-value**
+
+* 尽量以pass-by-reference-to-const替换pass-by-value。前者通常比较高效，并可避免切割问题
+* 以上规则并不适用于内置类型，以及STL的迭代器和函数对象。对它们而言pass-by-value往往比较适当
+
+**Don't try to return a reference when you must return an object**
+
+* 绝不要返回pointer或reference指向一个local stack对象，或返回reference指向一个heap-allocated对象，或返回pointer或reference指向一个local static对象而有可能同时需要多个这样的对象。
+
+**item 22: Declare data members private**
+
 
 
 
