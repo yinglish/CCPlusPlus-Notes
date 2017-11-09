@@ -1,5 +1,2 @@
-# CppPrimer
-SolutionsForCppPrimer
-
-[C++PrimerSolutions](https://github.com/Mooophy/Cpp-Primer)
+# Reading notes of C and C++
 
